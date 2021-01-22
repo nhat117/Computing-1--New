@@ -9,7 +9,7 @@ void swap(char *str,int start, int end) {
 	str[start] = str[end];
 	str[end] = tmp;
 }
-char *strdate(char *src, char *dest) {
+char *strdate(const char *src, char *dest) {
 	int iterator = 0;
 	//copy the content of whole string;
 	strcpy(dest, src);
@@ -21,6 +21,10 @@ char *strdate(char *src, char *dest) {
 		iterator ++;
 	}
 
+	//Convert day in to Month Format
+	if (strcmp("1", src + 2) == 0) 
+		strcpy("January", dest);
+	else if 
 	// Repalce '\' to ' '
 	for(iterator = 0;dest[iterator] != '\0'; iterator ++) {
 		if (dest[iterator] =='/')
